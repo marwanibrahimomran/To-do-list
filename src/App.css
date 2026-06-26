@@ -67,6 +67,7 @@ li{
   padding: 20px ;
   width: 100%;
   display: flex;
+  cursor:pointer;
   justify-content: space-between;
   border-radius: 10px;
   background-color: rgba(255, 178, 62, 0.774);
