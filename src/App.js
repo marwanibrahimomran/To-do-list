@@ -94,7 +94,7 @@ function App() {
           <button onMouseEnter={RemoveAllMotion}
             onMouseLeave={RemoveAllMotionOff}
             onClick={RemoveAll}>Remove all</button><br />
-          {showMes && <div className="overlay"><div className="pop"><br /><br /><h2>No tasks to remove</h2> <br />
+          {showMes && <div className="overlay"><div className="pop"><br /><h2>No tasks to remove</h2> <br />
             <button onClick={ClosePop} className="closebtn">x</button><br /></div> </div>}
 
           <button onClick={RemoveCompleted} >Remove Completed</button>
