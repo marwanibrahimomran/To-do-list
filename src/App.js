@@ -3,12 +3,17 @@ import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
-
+  const [showMes , setShowMes] = useState(false)
   const [newTodo, setNewTodo] = useState("");
 
+
+
+  // HANDLE DELETE
   function HandleDelete(id) {
     setTodos(todos.filter((todo) => todo.id !== id));
   }
+
+  // HANDLE ADD
 
   function HandleAdd() {
     if (newTodo.trim() !== "") {
@@ -19,6 +24,9 @@ function App() {
       setNewTodo("");
     }
   }
+
+  // HANDLE COMPLETE
+
   function CompletedTodo(id) {
   setTodos((prev) =>
     prev.map((todo) =>
@@ -26,13 +34,25 @@ function App() {
     )
   );
 }
+
+  // HANDLE REMOVE 
+
   function RemoveAll(){
     if(todos.length === 0)
-      alert("No Todos Yet")
+      setShowMes(true)
     else
     setTodos([])
   }
+
+  function RemoveCompleted(){
+    
+    setTodos((prev)=>prev.filter((todo)=> !todo.completed))
+  }
+
+
   
+  // HANDLE REMOVE MOTION
+
   function RemoveAllMotion(){
   const removemotion = document.getElementsByClassName("list")[0]
   removemotion.classList.add("plor")
@@ -43,9 +63,9 @@ function App() {
   removemotion.classList.remove("plor")
   }
 
-  function RemoveCompleted(){
-    
-    setTodos((prev)=>prev.filter((todo)=> !todo.completed))
+  //COLSE POP
+  function ClosePop(){
+    setShowMes(false)
   }
   
  
@@ -71,6 +91,9 @@ function App() {
         <button onMouseEnter={RemoveAllMotion}
         onMouseLeave={RemoveAllMotionOff}
         onClick={RemoveAll}>Remove all</button><br/>
+        {showMes &&  <div className="pop"><br/><h2>No todos to remove</h2> <br/>
+        <button onClick={ClosePop} className="closebtn">x</button></div>}
+        
         <button onClick={RemoveCompleted} >Remove Completed</button>
 
         </div>
