@@ -75,12 +75,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To do list - React app </h1>
+      <div className="head">
+              <h1>To do list - React app </h1>
+
+      </div>
       <div className="input-form">
         <input placeholder="   Write what you want to do HERE ..."
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
-        ></input>
+        ></input><br/>
         <button onClick={HandleAdd}>Add to do</button>
       </div>
       <div className="total ">
@@ -94,7 +97,7 @@ function App() {
           <button onMouseEnter={RemoveAllMotion}
             onMouseLeave={RemoveAllMotionOff}
             onClick={RemoveAll}>Remove all</button><br />
-          {showMes && <div className="overlay"><div className="pop"><h2>No tasks to remove</h2> <br />
+          {showMes && <div className="overlay"><div className="pop"><br /><br /><h2>No tasks to remove</h2> <br />
             <button onClick={ClosePop} className="closebtn">x</button></div> </div>}
 
           <button onClick={RemoveCompleted} >Remove Completed</button>
