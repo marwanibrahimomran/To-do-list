@@ -8,7 +8,7 @@
   background-color: rgba(203, 207, 206, 0.479);
 }
 
-.App h1{
+.App h1 {
   padding: 20px 30px;
   background-color: rgb(255, 255, 255);
   position: relative;
@@ -42,9 +42,10 @@
   color: white;
 }
 
-.head{
+.head {
   width: 80%;
 }
+
 .App-link {
   color: #61dafb;
 }
@@ -145,11 +146,16 @@ li {
 
 .li-div {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 90%;
   position: relative;
-  margin: 20px auto;
+  margin: auto 30px;
 }
+.li-div button{
+  width: 7%;
+}
+
+
 
 .selected {
   text-decoration: line-through;
